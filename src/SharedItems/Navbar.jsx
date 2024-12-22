@@ -11,9 +11,6 @@ const Navbar = () => {
     <>
       <NavLink to={"/"}>Home</NavLink>
       <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
-      {user && <NavLink to={"/addReview"}>Add Review</NavLink>}
-      {user && <NavLink to={"/myReview"}>My Reviews</NavLink>}
-      {user && <NavLink to={"/WatchList"}>WatchList</NavLink>}
     </>
   );
 
@@ -39,15 +36,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className= " menu menu-sm dropdown-content bg-base-100  rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className=" menu menu-sm dropdown-content bg-base-100  rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
         </div>
-        <h1 className="text-4xl font-semibold text-purple-500">
-          {" "}
-          Chill Gamer{" "}
-        </h1>
+        <h1 className="text-4xl font-semibold text-purple-500">Chill Gamer</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2 xl:gap-4 text-xl font-medium ">
@@ -57,40 +51,57 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex items-center gap-4 relative">
-            
-            <button>
-              <img
-                className="w-10 rounded-full my-anchor-element cursor-pointer"
-                src={user?.photoURL}
-                alt=""
-              
-              />
-            </button>
-            <Tooltip anchorSelect=".my-anchor-element" place="top">
-              <div>
-                <p className="text-white">{user?.displayName}</p>
-                <p className="text-white">{user?.email}</p>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn m-1 text-xl font-medium"
+              >
+                My Profile
               </div>
-            </Tooltip>
-            <button
-              className="btn bg-purple-700 text-white"
-              onClick={handleSignOut}
-            >
-              Sign Out
-            </button>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu text-xl font-medium  space-y-4 py-4 mt-2 rounded-box bg-zinc-200 w-60 p-2 shadow"
+              >
+               {user && <NavLink to={"/addVolunteer"}>Add Volunteer need Post</NavLink>}
+      {user && <NavLink to={"/myPosts"}>Manage My Posts</NavLink>}
+      {/* {user && <NavLink to={"/WatchList"}>WatchList</NavLink>} */}
+              </ul>
+            </div>
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button" className=" m-1">
+                <img
+                  className="w-10 rounded-full my-anchor-element cursor-pointer"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-black rounded-box z-[1] -ml-24 lg:w-60 p-2 shadow"
+              >
+                <li>
+                  <p className="text-white text-xl font-medium">
+                    {user?.displayName}
+                  </p>
+                </li>
+                <li>
+                  <button
+                    className="btn bg-purple-700 text-white"
+                    onClick={handleSignOut}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         ) : pathname === "/login" ? (
-          <Link
-            className="btn mr-5 bg-purple-700 text-white"
-            to={"/register"}
-          >
+          <Link className="btn mr-5 bg-purple-700 text-white" to={"/register"}>
             Sign UP
           </Link>
         ) : (
-          <Link
-            className="btn mr-5 bg-purple-700 text-white"
-            to={"/login"}
-          >
+          <Link className="btn mr-5 bg-purple-700 text-white" to={"/login"}>
             Sign In
           </Link>
         )}

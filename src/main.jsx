@@ -6,28 +6,39 @@ import AuthProvider from "./Context/AuthProvider";
 import MainLayout from "./Layout/MainLayout";
 import Login from "./Authentication/Login";
 import Register from "./Authentication/Register";
+import Home from "./Pages/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    children: [{
-      path: '/',
-      element: 'home'
-    },
-{
-      path: '/allVolunteer',
-      element: 'allVolunteer'
-    },
-  {
-    path: '/register',
-    element: <Register></Register>
-  },
-  {
-    path: '/login',
-    element: <Login></Login>
-  }
-  ]
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/allVolunteer",
+        element: "allVolunteer",
+      },
+
+      {
+        path: "/addVolunteer",
+        element: "addVolunteer",
+      },
+      {
+        path: "/myPosts",
+        element: "myPosts",
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+    ],
   },
 ]);
 
