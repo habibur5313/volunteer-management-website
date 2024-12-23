@@ -7,6 +7,10 @@ import MainLayout from "./Layout/MainLayout";
 import Login from "./Authentication/Login";
 import Register from "./Authentication/Register";
 import Home from "./Pages/Home/Home";
+import AddVolunteerNeedPost from "./Pages/AddPost/AddVolunteerNeedPost";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AllVolunteerNeedPost from "./Pages/AllVolunteerNeedPost/AllVolunteerNeedPost";
+import axios from "axios";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +23,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/allVolunteer",
-        element: "allVolunteer",
+        element: <AllVolunteerNeedPost></AllVolunteerNeedPost>,
+        loader: () => axios.get(`${import.meta.env.VITE_server}/addVolunteerNeedPost`)
       },
 
       {
         path: "/addVolunteer",
-        element: "addVolunteer",
+        element: <PrivateRoute><AddVolunteerNeedPost></AddVolunteerNeedPost></PrivateRoute>,
       },
       {
         path: "/myPosts",
