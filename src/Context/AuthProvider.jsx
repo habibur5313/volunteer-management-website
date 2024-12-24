@@ -10,6 +10,7 @@ import React, { createContext, useEffect, useState } from "react";
 
 import { GoogleAuthProvider } from "firebase/auth";
 import auth from "../Firebase/firebase.init";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -46,7 +47,23 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(true);
-      // setLoginEmail(currentUser.email)
+      const user = { email: currentUser?.email };
+      if (currentUser?.email) {
+        axios
+          .post(`${import.meta.env.VITE_server}/jwt`, user, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            setLoading(true);
+          });
+      } 
+      else {
+        axios
+          .post(`${import.meta.env.VITE_server}/logout`, {}, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            setLoading(true);
+          });
+      }
     });
     return () => {
       unSubscribe();

@@ -1,19 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
-import axios from "axios";
 import MyPostTable from "./MyPostTable";
+import useAxios from "../../CustomHook/UseAxios";
 
 const MyVolunteerNeedPosts = () => {
   const { user } = useContext(AuthContext);
+  const axiosSecure = useAxios();
   const email = user?.email;
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios(`${import.meta.env.VITE_server}/myVolunteerNeedPosts/${email}`).then(
-      ({ data }) => {
+    axiosSecure
+      .get(`${import.meta.env.VITE_server}/myVolunteerNeedPosts/${email}`)
+      .then(({ data }) => {
         setPosts(data);
-      }
-    );
-  }, []);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [email]);
   return (
     <div>
       <h1 className="text-3xl mt-5 font-semibold animate__animated animate__pulse animate__infinite	infinite text-purple-700 text-center">
