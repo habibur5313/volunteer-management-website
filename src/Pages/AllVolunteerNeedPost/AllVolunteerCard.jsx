@@ -1,31 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AllVolunteerCard = ({ post}) => {
+const AllVolunteerCard = ({ post }) => {
   return (
-   <div>
-    <div className="card bg-base-100 h-[300px]  image-full shadow-xl">
-      <figure>
-        <img
-         className="w-full " src={post.thumbnailUrl}
-          alt={post?.name}
-        />
-      </figure>
-      <div className="card-body flex flex-col justify-center">
-        <h2 className="text-3xl font-semibold text-center">{post?.postTitle}</h2>
-        <div>
-        <p className="text-center text-xl font-medium">Rating: {post?.volunteerNeeded
-        }</p>
-        <p className="text-center text-xl font-medium mt-2">genres: {post?.category
-        }</p>
-        <p className="text-center text-xl font-medium mt-2">year: {post?.location
-        }</p>
-        <Link className="flex justify-center items-center mt-4" to={`/post/details/${post._id}`}><button className="btn btn-accent text-white text-xl font-medium">Explore details</button></Link>
-        </div>
+    <div>
+      <div className="card bg-base-100 h-[300px]  image-full shadow-xl">
+        <figure>
+          <img className="w-full " src={post.thumbnailUrl} alt={post?.name} />
+        </figure>
+        <div className="card-body flex flex-col justify-center">
+      
         
+          <p className=" flex justify-end text-xl font-medium">
+             deadline: {post?.Date.split('T')[0]}
+            </p>
+            <h2 className="text-3xl font-semibold">
+            {post?.postTitle}
+          </h2>
+         
+          <div>           
+            <p className=" text-xl font-medium mt-2">
+              Category: {post?.category}
+            </p>
+            <p className=" text-xl font-medium">
+             Location: {post?.location}
+            </p>
+            <p className=" text-xl font-medium">
+              Volunteer need: {post?.volunteerNeeded}
+            </p>
+            <Link
+              className="flex justify-end mt-4"
+              to={`/allVolunteer/${post._id}`}
+            >
+              <button className="btn btn-accent text-white text-xl font-medium">
+                Explore details
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
-   </div>
   );
 };
 
