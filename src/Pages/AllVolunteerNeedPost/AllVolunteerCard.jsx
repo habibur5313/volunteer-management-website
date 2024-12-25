@@ -30,10 +30,10 @@ const AllVolunteerCard = ({ post }) => {
             </p>
             <Link
               className="flex justify-end mt-4"
-              to={`/allVolunteer/${post._id}`}
+              to={`/volunteerDetails/${post._id}`}
             >
               <button className="btn btn-accent text-white text-xl font-medium">
-                Explore details
+                view details
               </button>
             </Link>
           </div>

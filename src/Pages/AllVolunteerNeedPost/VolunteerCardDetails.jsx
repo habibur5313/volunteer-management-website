@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
+import { Link, useLoaderData } from "react-router-dom";
 
 const VolunteerCardDetails = () => {
   const { data } = useLoaderData();
@@ -14,21 +13,23 @@ const VolunteerCardDetails = () => {
     location,
     volunteerNeeded,
     Date,
+    _id
   } = data;
-  const {user} = useContext(AuthContext)
 
   return (
     <div className="flex flex-col  max-w-3xl mx-auto">
       <div className="w-full">
-        <img className="w-full" src={thumbnailUrl} alt={postTitle} />
+        <img className="w-full rounded-xl" src={thumbnailUrl} alt={postTitle} />
       </div>
       <div className="flex flex-col lg:flex-row gap-4 justify-between items-center">
         
-          <div className="w-full flex-1 pl-4 pt-6 pb-6">
-            <p className="text-xl font-medium">
+          <div className="w-full pl-4 pt-6 pb-6">
+            <p className="text-xl text-end font-medium">
               deadline: {Date.split("T")[0]}
             </p>
-            <h2 className="text-3xl font-semibold">{postTitle}</h2>
+            <h2 className="text-xl font-semibold mt-1">Organizer Email: {organizerEmail}</h2>
+            <h2 className="text-xl font-semibold mt-2">Organizer Name: {organizerName}</h2>
+            <h2 className="text-3xl font-semibold mt-2">Title: {postTitle}</h2>
 
             <div>
               <p className=" text-xl font-medium mt-2">Category: {category}</p>
@@ -39,26 +40,10 @@ const VolunteerCardDetails = () => {
               <p className=" text-xl font-medium">
                 Description: {description}
               </p>
-              
+              <Link to={`/beAVolunteer/${_id}`}><div className="flex justify-end mt-2">
+              <button className="btn text-xl font-medium btn-accent text-white">be a volunteer</button></div></Link>
             </div>
-          </div>
-         
-        
-        <div className="flex-1">
-        <form action="" className="text-black">
-        <input
-              type="text"
-              value={user?.displayName}
-              className="input input-bordered h-14 w-full mt-4"
-            />
-             <input
-              type="text"
-              value={user?.email}
-              className="input input-bordered w-full h-14 mt-4"
-            />
-            <input type="submit" value="Request Post" />
-        </form>
-        </div>
+          </div> 
       </div>
     </div>
   );

@@ -12,9 +12,9 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AllVolunteerNeedPost from "./Pages/AllVolunteerNeedPost/AllVolunteerNeedPost";
 import axios from "axios";
 import VolunteerCardDetails from "./Pages/AllVolunteerNeedPost/VolunteerCardDetails";
-import MyPost from "./Pages/MyPost/MyPost";
 import MyVolunteerNeedPosts from "./Pages/MyVolunteerNeedPosts/MyVolunteerNeedPosts";
 import MyPostUpdate from "./Pages/MyVolunteerNeedPosts/MyPostUpdate";
+import BeAVolunteer from "./Pages/AllVolunteerNeedPost/BeAVolunteer";
 
 const router = createBrowserRouter([
   {
@@ -28,31 +28,62 @@ const router = createBrowserRouter([
       {
         path: "/allVolunteer",
         element: <AllVolunteerNeedPost></AllVolunteerNeedPost>,
-        loader: () => axios.get(`${import.meta.env.VITE_server}/addVolunteerNeedPost`)
+        loader: () =>
+          axios.get(`${import.meta.env.VITE_server}/addVolunteerNeedPost`),
       },
       {
-        path: "/allVolunteer/:id",
-        element: <PrivateRoute><VolunteerCardDetails></VolunteerCardDetails></PrivateRoute>,
-        loader: ({params}) => axios.get(`${import.meta.env.VITE_server}/addVolunteerNeedPost/${params.id}`)
+        path: "/volunteerDetails/:id",
+        element: (
+          <PrivateRoute>
+            <VolunteerCardDetails></VolunteerCardDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios.get(
+            `${import.meta.env.VITE_server}/addVolunteerNeedPost/${params.id}`
+          ),
       },
-
+      {
+        path: "/beAVolunteer/:id",
+        element: (
+          <PrivateRoute>
+            <BeAVolunteer></BeAVolunteer>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios.get(
+            `${import.meta.env.VITE_server}/addVolunteerNeedPost/${params.id}`
+          ),
+      },
       {
         path: "/addVolunteer",
-        element: <PrivateRoute><AddVolunteerNeedPost></AddVolunteerNeedPost></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddVolunteerNeedPost></AddVolunteerNeedPost>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myVolunteerNeedPosts",
-        element: <PrivateRoute><MyVolunteerNeedPosts></MyVolunteerNeedPosts></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyVolunteerNeedPosts></MyVolunteerNeedPosts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/posts/update/:id",
-        element: <PrivateRoute><MyPostUpdate></MyPostUpdate></PrivateRoute>,
-        loader: ({params}) => axios.get(`${import.meta.env.VITE_server}/addVolunteerNeedPost/${params.id}`) 
+        element: (
+          <PrivateRoute>
+            <MyPostUpdate></MyPostUpdate>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios.get(
+            `${import.meta.env.VITE_server}/addVolunteerNeedPost/${params.id}`
+          ),
       },
-      {
-        path: "/myPosts",
-        element: <MyPost></MyPost>,
-      },
+
       {
         path: "/register",
         element: <Register></Register>,
