@@ -5,9 +5,9 @@ import { TiDelete, TiDeleteOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyPostTable = ({ post, idx,setPosts,posts }) => {
+const MyPostRequestTable = ({ post, idx,setPosts,posts }) => {
   
-  const handleDelete = (id) => {
+  const handleCancel = (id) => {
     Swal.fire({
       title: "Are you Sure?",
       showDenyButton: true,
@@ -17,7 +17,7 @@ const MyPostTable = ({ post, idx,setPosts,posts }) => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        axios.delete(`${import.meta.env.VITE_server}/myPostDelete/${id}`)
+        axios.delete(`${import.meta.env.VITE_server}/myPostRequestDelete/${id}`)
           .then(({data}) => {
             if (data.deletedCount) {
               Swal.fire("Deleted!", "", "success");
@@ -36,20 +36,18 @@ const MyPostTable = ({ post, idx,setPosts,posts }) => {
       <td className="hidden sm:block">
         <img className="w-20 rounded-xl" src={post.thumbnailUrl} alt="" />
       </td>
+      <td>{post.status}</td>
       <td>{post.postTitle}</td>
       <td className="flex items-center justify-center gap-4">
         <button
-          onClick={() => handleDelete(post._id)}
+          onClick={() => handleCancel(post._id)}
           className="btn btn-accent text-3xl text-red-700"
         >
           <TiDelete />
         </button>
-        <Link to={`/posts/update/${post._id}`}><button className="btn btn-accent text-xl text-red-700 ">
-          <GrUpdate />
-        </button></Link>
       </td>
     </tr>
   );
 };
 
-export default MyPostTable;
+export default MyPostRequestTable;

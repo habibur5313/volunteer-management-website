@@ -20,7 +20,8 @@ const AddVolunteerNeedPost = () => {
     const description = form.description.value;
     const category = form.category.value;
     const location = form.location.value;
-    const volunteerNeeded = form.volunteerNeeded.value;
+    const volunteerNeeded = parseInt(form.volunteerNeeded.value);
+    
     const Date = startDate;
     
     const Post = {
@@ -43,7 +44,7 @@ const AddVolunteerNeedPost = () => {
               Swal.fire({
                 position: "top-center",
                 icon: "success",
-                title: "Review Added successfully",
+                title: "Add Post Successfully",
                 showConfirmButton: false,
                 timer: 1500,
               });

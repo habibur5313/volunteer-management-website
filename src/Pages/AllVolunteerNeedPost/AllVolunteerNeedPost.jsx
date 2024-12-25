@@ -20,7 +20,7 @@ const AllVolunteerNeedPost = () => {
     <div>
      <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12  mx-auto">
      <input type="search" name="search"  onChange={e => setSearch(e.target.value)}
-              value={search} placeholder="search by title" className="input input-bordered h-14 w-full" id="" />
+              value={search} placeholder="search by title" className="input text-black input-bordered h-14 w-full" id="" />
      </div>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
         {posts.map((post) => (

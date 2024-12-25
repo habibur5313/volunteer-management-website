@@ -96,7 +96,7 @@ const Register = () => {
         <h1 className="text-2xl font-semibold text-center">Register now!</h1>
         <form
           onSubmit={handleSignUp}
-          className="card-body pb-4 px-2 md:px-5 lg:px-14"
+          className="card-body pb-4 px-2 md:px-5 lg:px-14 text-black"
         >
           <div className="form-control">
             <label className="label">
@@ -183,7 +183,7 @@ const Register = () => {
         >
           <IoLogoGoogle />Continue with Google
         </button>
-        <p className="text-center mb-4">
+        <p className="text-center mb-4 text-black" >
           {" "}
           Have An Account ?{" "}
           <Link className="text-red-700 text-xl font-medium" to={"/login"}>

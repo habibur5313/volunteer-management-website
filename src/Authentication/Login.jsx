@@ -78,7 +78,7 @@ const Login = () => {
         <h1 className="text-2xl font-semibold text-center">Login now!</h1>
         <form
           onSubmit={handleLogin}
-          className="card-body pb-4 px-2 md:px-5 lg:px-14"
+          className="card-body pb-4 px-2 md:px-5 lg:px-14 text-black"
         >
           <div className="form-control">
             <label className="label">
@@ -139,7 +139,7 @@ const Login = () => {
           <IoLogoGoogle />
           Continue with Google
         </button>
-        <p className="text-center mb-4">
+        <p className="text-center mb-4 text-black">
           Dont’t Have An Account ?{" "}
           <Link className="text-red-800 text-xl font-medium " to={"/register"}>
             Register

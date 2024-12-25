@@ -29,7 +29,7 @@ const Navbar = ({ toggleDarkMode }) => {
           </div>
           <ul
             tabIndex={0}
-            className=" menu menu-sm dropdown-content bg-base-100  rounded-box z-20 mt-3 w-52 p-2 shadow"
+            className=" menu menu-sm dropdown-content bg-base-100  rounded-box z-20 mt-3 w-52 p-2 shadow text-black"
           >
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
@@ -46,7 +46,7 @@ const Navbar = ({ toggleDarkMode }) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/myVolunteerRequestPost"}>
+                    <NavLink to={"/myVolunteerRequestPosts"}>
                       My Volunteer Request Post
                     </NavLink>
                   </li>
@@ -66,7 +66,7 @@ const Navbar = ({ toggleDarkMode }) => {
       <div className="navbar-end">
         <button
           onClick={toggleDarkMode}
-          className="p-2 m-4 border rounded hidden sm:block"
+          className="p-2 lg:m-4 border rounded"
         >
           <input
             type="checkbox"
@@ -103,7 +103,7 @@ const Navbar = ({ toggleDarkMode }) => {
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"/myVolunteerRequestPost"}>
+                        <NavLink to={"/myVolunteerRequestPosts"}>
                           My Volunteer Request Post
                         </NavLink>
                       </li>
@@ -117,7 +117,7 @@ const Navbar = ({ toggleDarkMode }) => {
                 <img
                   className="w-10 rounded-full my-anchor-element cursor-pointer"
                   src={user?.photoURL}
-                  alt=""
+                  alt="userImg"
                 />
               </div>
               <ul
