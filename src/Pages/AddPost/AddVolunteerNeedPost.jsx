@@ -71,12 +71,12 @@ const AddVolunteerNeedPost = () => {
             <input
               type="text"
               value={user?.displayName}
-              className="input input-bordered h-14 w-full"
+              className="input input-bordered h-14 w-full text-black"
             />
             <input
               type="text"
               value={user?.email}
-              className="input input-bordered w-full h-14"
+              className="input input-bordered w-full h-14 text-black"
             />
           </div>
           {/* thumbnail and title */}
@@ -85,17 +85,17 @@ const AddVolunteerNeedPost = () => {
               type="text"
               placeholder="Type Thumbnail URL"
               name="thumbnailUrl"
-              className="input input-bordered h-14 w-full"
+              className="input input-bordered h-14 w-full text-black"
             />
             <input
               type="text"
               placeholder="Type post title"
               name="postTitle"
-              className="input input-bordered w-full h-14"
+              className="input input-bordered w-full h-14 text-black"
             />
           </div>
           {/* Description */}
-          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-4 md:mt-8">
+          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 text-black mx-auto mt-4 md:mt-8">
             <textarea
               placeholder="type review description"
               name="description"
@@ -103,7 +103,7 @@ const AddVolunteerNeedPost = () => {
             ></textarea>
           </div>
           {/* category and location */}
-          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12  mx-auto flex flex-col md:flex-row gap-4 mt-4 md:mt-8">
+          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 text-black  mx-auto flex flex-col md:flex-row gap-4 mt-4 md:mt-8">
             <select
               name="category"
               defaultValue={"Category"}
@@ -123,14 +123,14 @@ const AddVolunteerNeedPost = () => {
             />
           </div>
           {/* No. of volunteers needed and deadline */}
-          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12  mx-auto flex flex-col md:flex-row gap-4 mt-4 md:mt-8">
+          <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 text-black  mx-auto flex flex-col md:flex-row gap-4 mt-4 md:mt-8">
             <input
               type="number"
               name="volunteerNeeded"
               className="input input-bordered h-14 w-full"
             />
 
-            <div className="w-full h-14 border rounded-xl flex items-center justify-center">
+            <div className="w-full h-14 border text-black rounded-xl flex items-center justify-center">
              
               <DatePicker
                 selected={startDate}

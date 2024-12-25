@@ -45,7 +45,7 @@ const VolunteerCardDetails = () => {
          
         
         <div className="flex-1">
-        <form action="">
+        <form action="" className="text-black">
         <input
               type="text"
               value={user?.displayName}

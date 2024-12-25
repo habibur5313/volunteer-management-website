@@ -78,7 +78,7 @@ const MyPostUpdate = () => {
         <h1 className="text-3xl mt-5 font-semibold animate__animated animate__pulse animate__infinite	infinite text-purple-700 text-center">
           {organizerName}, Update your review.
         </h1>
-        <form onSubmit={handleUpdateReview}>
+        <form onSubmit={handleUpdateReview} className="text-black">
           <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12  mx-auto flex flex-col md:flex-row gap-4 mt-4 md:mt-8">
             <input
               type="text"
