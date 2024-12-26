@@ -50,25 +50,25 @@ export default function App() {
         <SwiperSlide>
           <img
             className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
-            src="https://i.ibb.co.com/1KN7BXj/images-6.jpg"
+            src="https://i.ibb.co.com/rpXcXnn/volunteer-network-website-slider-image.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
-            src="https://i.ibb.co.com/cc2YsWK/download-1.jpg"
+            src="https://i.ibb.co.com/jfC4MXL/images.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
-            src="https://i.ibb.co.com/PcGGVwc/download.jpg"
+            src="https://i.ibb.co.com/Jj9pxfb/download.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
-            src="https://i.ibb.co.com/rZdMKdh/images-3.jpg"
+            src="https://i.ibb.co.com/8rDtKKc/download-1.jpg"
           />
         </SwiperSlide>
       </Swiper>

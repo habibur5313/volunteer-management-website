@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useLoaderData } from "react-router-dom";
 const MyPostUpdate = () => {
   useEffect(() => {
@@ -22,8 +22,7 @@ const MyPostUpdate = () => {
     _id,
   } = data;
 
-  //   const [startDate, setStartDate] = useState(new Date());
-  //   console.log(startDate);
+    const [startDate, setStartDate] = useState(Date);
 
   const handleUpdateReview = (e) => {
     e.preventDefault();
@@ -34,7 +33,7 @@ const MyPostUpdate = () => {
     const category = form.category.value;
     const location = form.location.value;
     const volunteerNeeded = form.volunteerNeeded.value;
-    //     const Date = startDate;
+        const Date = startDate;
 
     const Post = {
       organizerEmail,
@@ -45,7 +44,7 @@ const MyPostUpdate = () => {
       category,
       location,
       volunteerNeeded,
-      //       Date,
+            Date,
     };
 
     axios
@@ -55,7 +54,7 @@ const MyPostUpdate = () => {
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "Review Added successfully",
+            title: "post Updated successfully",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -147,7 +146,7 @@ const MyPostUpdate = () => {
               className="input input-bordered h-14 w-full"
             />
 
-            {/* <div className="w-full h-14 border rounded-xl flex items-center justify-center">
+            <div className="w-full h-14 border rounded-xl flex items-center justify-center">
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
@@ -155,7 +154,7 @@ const MyPostUpdate = () => {
                 dateFormat="MMMM d, yyyy"
                 placeholderText="Select a date"
               />
-            </div> */}
+            </div>
           </div>
           {/* submit */}
           <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-10">
