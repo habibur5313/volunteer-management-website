@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const VolunteerCardDetails = () => {
+     useEffect(() =>{
+        document.title="Volunteer Card Details | Volunteer Network"
+       },[])
   const { data } = useLoaderData();
   const {
     organizerEmail,

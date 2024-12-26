@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Error = () => {
    useEffect(() =>{
-      document.title="Error | Coupon Chief"
+      document.title="Error | Volunteer Network"
      },[])
                     return (
                                         <div className='flex flex-col justify-center items-center min-h-screen'>

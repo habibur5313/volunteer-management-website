@@ -6,7 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const AddVolunteerNeedPost = () => {
   useEffect(() => {
-    document.title = "Add Post | Chill Gamer ";
+    document.title = "Add Post | Volunteer Network ";
   }, []);
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());

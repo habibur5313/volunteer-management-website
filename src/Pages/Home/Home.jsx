@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "./Banner";
 import VolunteerNeedsNow from "./VolunteerNeedsNow";
 import Contact from "./ContactUs";
 
 const Home = () => {
+  useEffect(() => {
+    document.title="Error | Volunteer Network"
+  },[])
   return (
     <div>
       <Banner></Banner>

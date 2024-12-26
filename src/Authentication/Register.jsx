@@ -9,7 +9,7 @@ import { IoLogoGoogle } from "react-icons/io";
 
 const Register = () => {
   useEffect(() => {
-    document.title = "Register | Chill Gamer";
+    document.title = "Register | Volunteer Network";
   }, []);
   const { setUser, SignUpEmailAndPassword, SignInGoogle, Update_information } =
     useContext(AuthContext);

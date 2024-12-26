@@ -5,9 +5,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useLoaderData } from "react-router-dom";
 const MyPostUpdate = () => {
-  useEffect(() => {
-    document.title = "Add Post | Chill Gamer ";
-  }, []);
+   useEffect(() =>{
+      document.title="My Post Update | Volunteer Network"
+     },[])
   const { data } = useLoaderData();
   const {
     organizerEmail,

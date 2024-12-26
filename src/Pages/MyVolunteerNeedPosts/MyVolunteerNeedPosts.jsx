@@ -5,6 +5,9 @@ import useAxios from "../../CustomHook/UseAxios";
 import Swal from "sweetalert2";
 
 const MyVolunteerNeedPosts = () => {
+     useEffect(() =>{
+        document.title="My Volunteer Need Post | Volunteer Network"
+       },[])
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxios();
   const email = user?.email;

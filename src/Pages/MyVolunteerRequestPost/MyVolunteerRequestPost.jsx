@@ -5,6 +5,9 @@ import MyPostRequestTable from "./MyVolunteerRequestTable";
 import Swal from "sweetalert2";
 
 const MyVolunteerRequestPost = () => {
+     useEffect(() =>{
+        document.title="My Volunteer Request Post | Volunteer Network"
+       },[])
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxios();
   const email = user?.email;

@@ -7,7 +7,7 @@ import { IoLogoGoogle } from "react-icons/io";
 
 const Login = () => {
   useEffect(() => {
-    document.title = "Login | Chill Gamer ";
+    document.title = "Login | Volunteer Network ";
   }, []);
   const { user, setUser, SignInEmailAndPassword, SignInGoogle, setLoginEmail } =
     useContext(AuthContext);
