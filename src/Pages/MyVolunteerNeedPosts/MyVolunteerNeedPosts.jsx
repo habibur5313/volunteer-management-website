@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import MyPostTable from "./MyPostTable";
 import useAxios from "../../CustomHook/UseAxios";
+import Swal from "sweetalert2";
 
 const MyVolunteerNeedPosts = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,13 @@ const MyVolunteerNeedPosts = () => {
         setPosts(data);
       })
       .catch((err) => {
-        console.log(err);
+       Swal.fire({
+                 position: "top-center",
+                 icon: "error",
+                 title: err.message,
+                 showConfirmButton: false,
+                 timer: 1000,
+               });
       });
   }, [email]);
   return (

@@ -29,7 +29,7 @@ const Navbar = ({ toggleDarkMode }) => {
           </div>
           <ul
             tabIndex={0}
-            className=" menu menu-sm dropdown-content bg-base-100  rounded-box z-20 mt-3 w-52 p-2 shadow text-black"
+            className=" menu menu-sm dropdown-content bg-base-100  rounded-box z-50 mt-3 w-52 p-2 shadow text-black"
           >
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
@@ -55,7 +55,7 @@ const Navbar = ({ toggleDarkMode }) => {
             )}
           </ul>
         </div>
-        <h1 className="text-4xl font-semibold text-purple-500">Chill Gamer</h1>
+        <h1 className="text-2xl font-medium sm:text-3xl md:text-4xl sm:font-semibold text-purple-500">Volunteer Network</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal flex items-center px-1 gap-2 xl:gap-4 text-xl font-medium ">
@@ -63,7 +63,37 @@ const Navbar = ({ toggleDarkMode }) => {
           <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end sm:hidden">
+      <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button" className=" m-1">
+                <img
+                  className="w-10 rounded-full my-anchor-element cursor-pointer"
+                  src={user?.photoURL}
+                  alt="userImg"
+                />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-black rounded-box z-20 -ml-24 lg:w-60 p-2 shadow"
+              >
+                <li>
+                  <p className="text-white text-xl font-medium">
+                    {user?.displayName}
+                  </p>
+                </li>
+                <li>
+                  <button
+                    className="btn bg-purple-700 text-white"
+                    onClick={handleSignOut}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </ul>
+              </div>
+      </div>
+      <div className=" navbar-end hidden sm:block">
+        <div className="flex items-center ml-10 md:ml-20 xl:ml-52 -mt-2 justify-end">
         <button
           onClick={toggleDarkMode}
           className="p-2 lg:m-4 border rounded"
@@ -80,7 +110,7 @@ const Navbar = ({ toggleDarkMode }) => {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn m-1 text-xl hidden md:block font-medium"
+                className="btn m-1 text-xl font-medium"
               >
                 My Profile
               </div>
@@ -149,6 +179,7 @@ const Navbar = ({ toggleDarkMode }) => {
             Sign In
           </Link>
         )}
+        </div>
       </div>
     </div>
   );

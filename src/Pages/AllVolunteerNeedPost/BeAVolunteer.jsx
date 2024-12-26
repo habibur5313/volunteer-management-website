@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const BeAVolunteer = () => {
   useEffect(() => {
-    document.title = "Add Post | Chill Gamer ";
+    document.title = "Be A Volunteer | Volunteer Network ";
   }, []);
   const { data } = useLoaderData();
   const {
@@ -24,9 +24,6 @@ const BeAVolunteer = () => {
   } = data;
   const {user} = useContext(AuthContext)
 
-  //   const [startDate, setStartDate] = useState(new Date());
-  //   console.log(startDate);
-
   const handleBeAVolunteer = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -36,7 +33,6 @@ const BeAVolunteer = () => {
     const category = form.category.value;
     const location = form.location.value;
     const volunteerNeeded = form.volunteerNeeded.value;
-    //     const Date = startDate;
     const postId = _id;
     const userEmail = user?.email;
     const userName = user?.displayName;
@@ -52,7 +48,7 @@ const BeAVolunteer = () => {
       category,
       location,
       volunteerNeeded,
-      //       Date,
+      Date,
       postId,
       userEmail,
       userName,
@@ -205,7 +201,7 @@ if(volunteerNeeded <= 0){
           </div>
           {/* No. of volunteers needed and deadline */}
           <div className="w-11/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12  mx-auto flex flex-col md:flex-row gap-4 mt-4 ">
-          <div className="w-full">
+          <div className="flex-1">
             <label className="label">
             <span className="label-text text-purple-700 font-medium">Volunteer Need</span>
           </label>
@@ -216,19 +212,18 @@ if(volunteerNeeded <= 0){
               className="input input-bordered h-14 w-full"
             /></div>
 
-            {/* <div className="w-full h-14 border rounded-xl flex items-center justify-center">
+             <div className="flex-1 rounded-xl flex items-center justify-center">
             <div className="w-full">
             <label className="label">
-            <span className="label-text text-purple-700 font-medium">thumbnail Url</span>
+            <span className="label-text text-purple-700 font-medium">deadline</span>
           </label>
               <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                className="w-full h-full text-lg px-3 py-2"
+                selected={Date}
+                className="rounded-xl border h-14 text-lg px-3 py-2"
                 dateFormat="MMMM d, yyyy"
                 placeholderText="Select a date"
               /></div>
-            </div> */}
+            </div>
             
           </div>
           {/* Request user name and email */}

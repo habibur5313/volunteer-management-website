@@ -52,7 +52,6 @@ const AuthProvider = ({ children }) => {
         axios
           .post(`${import.meta.env.VITE_server}/jwt`, user, { withCredentials: true })
           .then((res) => {
-            console.log(res.data);
             setLoading(true);
           });
       } 
@@ -60,7 +59,6 @@ const AuthProvider = ({ children }) => {
         axios
           .post(`${import.meta.env.VITE_server}/logout`, {}, { withCredentials: true })
           .then((res) => {
-            console.log(res.data);
             setLoading(true);
           });
       }
