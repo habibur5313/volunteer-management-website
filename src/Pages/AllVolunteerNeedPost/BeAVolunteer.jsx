@@ -22,17 +22,13 @@ const BeAVolunteer = () => {
     Date,
     _id,
   } = data;
+  
   const {user} = useContext(AuthContext)
+  const [volunteerCount,setVolunteerCount] = useState(volunteerNeeded)
 
   const handleBeAVolunteer = (e) => {
     e.preventDefault();
     const form = e.target;
-    const thumbnailUrl = form.thumbnailUrl.value;
-    const postTitle = form.postTitle.value;
-    const description = form.description.value;
-    const category = form.category.value;
-    const location = form.location.value;
-    const volunteerNeeded = form.volunteerNeeded.value;
     const postId = _id;
     const userEmail = user?.email;
     const userName = user?.displayName;
@@ -47,7 +43,7 @@ const BeAVolunteer = () => {
       description,
       category,
       location,
-      volunteerNeeded,
+      volunteerCount,
       Date,
       postId,
       userEmail,
@@ -64,7 +60,7 @@ if(organizerEmail === userEmail){
                                                   timer: 1500,
                                                 });
 }
-if(volunteerNeeded <= 0){
+if(volunteerCount <= 0){
                     return Swal.fire({
                                                   position: "top-center",
                                                   icon: "error",
@@ -79,6 +75,7 @@ if(volunteerNeeded <= 0){
       .then(({ data }) => {
                     
         if (data.insertedId) {
+          setVolunteerCount(volunteerCount - 1)
           Swal.fire({
             position: "top-center",
             icon: "success",
@@ -207,7 +204,7 @@ if(volunteerNeeded <= 0){
           </label>
             <input
               type="number"
-              value={volunteerNeeded}
+              value={volunteerCount}
               name="volunteerNeeded"
               className="input input-bordered h-14 w-full"
             /></div>

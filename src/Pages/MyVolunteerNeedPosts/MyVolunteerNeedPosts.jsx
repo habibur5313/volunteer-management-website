@@ -53,7 +53,7 @@ const MyVolunteerNeedPosts = () => {
             ))}
           </tbody>
         </table>
-        <h1>{posts.length === 0 && <p>you not added data</p>}</h1>
+        <h1>{posts.length === 0 && <p className="text-center text-2xl font-medium text-purple-600">Please Post add first</p>}</h1>
       </div>
     </div>
   );

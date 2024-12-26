@@ -26,7 +26,7 @@ const MyPostRequestTable = ({ post, idx,setPosts,posts }) => {
             }
           });
       } else if (result.isDenied) {
-        Swal.fire("post not deleted", "", "info");
+        Swal.fire("Request not deleted", "", "info");
       }
     });
   };

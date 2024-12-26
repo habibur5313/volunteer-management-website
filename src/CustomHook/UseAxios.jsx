@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: `${import.meta.env.VITE_server}/`,
   withCredentials: true,
 });
 
@@ -18,7 +18,7 @@ const navigate = useNavigate()
     (error) => {
       const status = error.response.status;
       if (status === 401 || status === 403) {
-        handleSignOut().then((res) => console.log("logout"));
+        handleSignOut()
         navigate('/login')
       }
 

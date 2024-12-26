@@ -63,14 +63,14 @@ const Navbar = ({ toggleDarkMode }) => {
           <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
         </ul>
       </div>
-      <div className="navbar-end sm:hidden">
+ <div className="navbar-end sm:hidden">
       <div className="dropdown dropdown-hover">
               <div tabIndex={0} role="button" className=" m-1">
-                <img
+                {user && <img
                   className="w-10 rounded-full my-anchor-element cursor-pointer"
                   src={user?.photoURL}
                   alt="userImg"
-                />
+                />}
               </div>
               <ul
                 tabIndex={0}
@@ -91,6 +91,15 @@ const Navbar = ({ toggleDarkMode }) => {
                 </li>
               </ul>
               </div>
+              {user ? '' : pathname === "/login" ? (
+          <Link className="btn mr-5 bg-purple-700 text-white" to={"/register"}>
+            Sign UP
+          </Link>
+        ) : (
+          <Link className="btn mr-5 bg-purple-700 text-white" to={"/login"}>
+            Sign In
+          </Link>)}
+              
       </div>
       <div className=" navbar-end hidden sm:block">
         <div className="flex items-center ml-10 md:ml-20 xl:ml-52 -mt-2 justify-end">

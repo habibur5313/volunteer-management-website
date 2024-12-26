@@ -28,9 +28,8 @@ const MyVolunteerRequestPost = () => {
   return (
     <div>
       <h1 className="text-3xl mt-5 font-semibold animate__animated animate__pulse animate__infinite	infinite text-purple-700 text-center">
-        {user.displayName},Your All Post is here.
+        {user.displayName},Your All Request is here.
       </h1>
-      <p>{posts.length}</p>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -54,7 +53,8 @@ const MyVolunteerRequestPost = () => {
             ))}
           </tbody>
         </table>
-        <h1>{posts.length === 0 && <p>you not added data</p>}</h1>
+        <h1>{posts.length === 0 && <p className="text-center text-2xl font-medium text-purple-600">Please Request first</p>}</h1>
+
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const AllVolunteerNeedPost = () => {
     document.title = "All Review | Chill Gamer ";
   }, []);
   const {data} = useLoaderData();
-  const [posts,setPosts] = useState(data)
+  const [posts,setPosts] = useState(data) 
   const [search,setSearch] = useState('')
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_server}/search?search=${search}`)

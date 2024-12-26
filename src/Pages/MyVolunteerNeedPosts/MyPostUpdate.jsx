@@ -32,7 +32,7 @@ const MyPostUpdate = () => {
     const description = form.description.value;
     const category = form.category.value;
     const location = form.location.value;
-    const volunteerNeeded = form.volunteerNeeded.value;
+    const volunteerNeeded = parseInt(form.volunteerNeeded.value);
         const Date = startDate;
 
     const Post = {
