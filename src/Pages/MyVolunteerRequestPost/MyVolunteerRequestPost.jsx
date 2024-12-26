@@ -38,7 +38,7 @@ const MyVolunteerRequestPost = () => {
               <th>No.</th>
               <th className="hidden sm:block">Photo</th>
               <th>Status</th>
-              <th>Title</th>
+              <th>Suggestions</th>
             </tr>
           </thead>
           <tbody>

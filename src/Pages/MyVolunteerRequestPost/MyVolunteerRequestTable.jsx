@@ -37,7 +37,7 @@ const MyPostRequestTable = ({ post, idx,setPosts,posts }) => {
         <img className="w-20 rounded-xl" src={post.thumbnailUrl} alt="" />
       </td>
       <td>{post.status}</td>
-      <td>{post.postTitle}</td>
+      <td>{post.suggestion}</td>
       <td className="flex items-center justify-center gap-4">
         <button
           onClick={() => handleCancel(post._id)}

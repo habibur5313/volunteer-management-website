@@ -21,7 +21,6 @@ const AddVolunteerNeedPost = () => {
     const category = form.category.value;
     const location = form.location.value;
     const volunteerNeeded = parseInt(form.volunteerNeeded.value);
-    console.log(typeof volunteerNeeded);
     const Date = startDate;
     
     const Post = {

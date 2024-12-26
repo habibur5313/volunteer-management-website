@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const AllVolunteerCard = ({ post }) => {
-  
   return (
     <div>
       <div className="card bg-base-100 h-[300px]  image-full shadow-xl">
         <figure>
-          <img className="w-full " src={post.thumbnailUrl} alt={post?.name} />
+          <img className="w-full" src={post.thumbnailUrl} alt={post?.name} />
         </figure>
         <div className="card-body flex flex-col justify-center">
       

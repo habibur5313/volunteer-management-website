@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,6 +25,7 @@ const BeAVolunteer = () => {
   
   const {user} = useContext(AuthContext)
   const [volunteerCount,setVolunteerCount] = useState(volunteerNeeded)
+  const navigate = useNavigate()
 
   const handleBeAVolunteer = (e) => {
     e.preventDefault();
@@ -76,6 +77,7 @@ if(volunteerCount <= 0){
                     
         if (data.insertedId) {
           setVolunteerCount(volunteerCount - 1)
+          navigate('/myVolunteerRequestPosts')
           Swal.fire({
             position: "top-center",
             icon: "success",

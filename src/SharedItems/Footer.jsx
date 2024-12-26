@@ -7,10 +7,10 @@ const Footer = () => {
      <footer className="footer footer-center  rounded p-10">
   <nav className="flex flex-col sm:flex-row gap-4">
     <Link to={'/'} className="link link-hover">Home</Link>
-    <Link to={'/allReviews'} className="link link-hover">All Reviews</Link>
-    <Link to={'/myReview'} className="link link-hover">My Reviews</Link>
-    <Link to={'/WatchList'} className="link link-hover">WatchList</Link>
-    <Link to={'/addReview'} className="link link-hover">Add Review</Link>
+    <Link to={'/allVolunteer'} className="link link-hover">All Volunteer</Link>
+    <Link to={'/addVolunteer'} className="link link-hover">Add Volunteer</Link>
+    <Link to={'/myVolunteerNeedPosts'} className="link link-hover">My Volunteer Need Posts</Link>
+    <Link to={'/myVolunteerRequestPosts'} className="link link-hover">My Volunteer Request Posts</Link>
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">
@@ -50,7 +50,7 @@ const Footer = () => {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by Chill Gamer</p>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved by Volunteer Network</p>
   </aside>
 </footer>
     </div>
