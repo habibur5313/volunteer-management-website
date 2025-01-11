@@ -17,7 +17,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 export default function App() {
                     const {user} = useContext(AuthContext)
   return (
-    <>
+    <div className=" ">
     {user && (
         <h1 className="text-3xl sm:mt-10 mb-10 font-semibold animate__animated animate__pulse animate__infinite	infinite text-purple-700 text-center">
           {/*  */}
@@ -49,29 +49,29 @@ export default function App() {
       >
         <SwiperSlide>
           <img
-            className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
             src="https://i.ibb.co.com/rpXcXnn/volunteer-network-website-slider-image.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
             src="https://i.ibb.co.com/jfC4MXL/images.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
             src="https://i.ibb.co.com/Jj9pxfb/download.jpg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="w-full lg:w-10/12 mx-auto h-[300px] md:h-[450px] lg:h-[600px] rounded-xl"
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
             src="https://i.ibb.co.com/8rDtKKc/download-1.jpg"
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

@@ -35,7 +35,7 @@ setTableFormat(false)
      </div>
      <div className="flex justify-end mr-10">
       {tableFormat ? <MdTableRows onClick={handleRows} className="text-4xl" /> : <MdViewColumn onClick={handleColumns} className="text-4xl"/> }</div>
-     {tableFormat ?  <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+     {tableFormat ?  <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
         {posts.map((post) => (
           <AllVolunteerCard key={post._id} post={post}></AllVolunteerCard>
         ))}

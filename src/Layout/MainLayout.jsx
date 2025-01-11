@@ -24,7 +24,7 @@ const MainLayout = () => {
       >
       <div className="container mx-auto">
         <Navbar toggleDarkMode={toggleDarkMode}></Navbar>
-        <div className="min-h-[calc(100vh-380px)]">
+        <div className="min-h-[calc(100vh-270px)] pt-32">
           <Outlet></Outlet>
         </div>
       </div>

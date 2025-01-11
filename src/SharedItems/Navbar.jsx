@@ -8,7 +8,7 @@ const Navbar = ({ toggleDarkMode }) => {
   const { pathname } = useLocation();
 
   return (
-    <div className=" navbar pt-4  items-start rounded-xl ">
+    <div className=" navbar  px-2 md:px-6 xl:px-10  flex items-center border fixed container mx-auto text-white bg-black bg-opacity-20 z-50 rounded-xl  ">
       <div className="navbar-start mb-10">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,130 +55,48 @@ const Navbar = ({ toggleDarkMode }) => {
             )}
           </ul>
         </div>
-        <h1 className="text-2xl font-medium sm:text-3xl md:text-4xl sm:font-semibold text-purple-500">Volunteer Network</h1>
+        <h1 className="text-2xl font-medium sm:text-3xl md:text-4xl sm:font-semibold text-purple-500">
+          Volunteer<span className="ml-1">Network</span>
+        </h1>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex -mt-6">
         <ul className="menu menu-horizontal flex items-center px-1 gap-2 xl:gap-4 text-xl font-medium ">
           <NavLink to={"/"}>Home</NavLink>
           <NavLink to={"/allVolunteer"}>All volunteer</NavLink>
         </ul>
       </div>
- <div className="navbar-end sm:hidden">
-      <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button" className=" m-1">
-                {user && <img
-                  className="w-10 rounded-full my-anchor-element cursor-pointer"
-                  src={user?.photoURL}
-                  alt="userImg"
-                />}
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu bg-black rounded-box z-20 -ml-24 lg:w-60 p-2 shadow"
-              >
-                <li>
-                  <p className="text-white text-xl font-medium">
-                    {user?.displayName}
-                  </p>
-                </li>
-                <li>
-                  <button
-                    className="btn bg-purple-700 text-white"
-                    onClick={handleSignOut}
-                  >
-                    Sign Out
-                  </button>
-                </li>
-              </ul>
-              </div>
-              {user ? '' : pathname === "/login" ? (
-          <Link className="btn mr-5 bg-purple-700 text-white" to={"/register"}>
-            Sign UP
-          </Link>
-        ) : (
-          <Link className="btn mr-5 bg-purple-700 text-white" to={"/login"}>
-            Sign In
-          </Link>)}
-              
-      </div>
-      <div className=" navbar-end hidden sm:block">
-        <div className="flex items-center ml-10 md:ml-20 xl:ml-52 -mt-2 justify-end">
-        <button
-          onClick={toggleDarkMode}
-          className="p-2 lg:m-4 border rounded"
-        >
-          <input
-            type="checkbox"
-            value="synthwave"
-            className="toggle theme-controller"
-          />
-        </button>
-        {user ? (
-          <div className="flex items-center gap-4 relative">
-            <div className="dropdown text-black">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn m-1 text-xl font-medium"
-              >
-                My Profile
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu text-xl font-medium  space-y-4 py-4 mt-2 rounded-box bg-zinc-200 z-50  w-60 p-2 shadow"
-              >
-                {user && (
-                  <NavLink to={"/addVolunteer"}>
-                    Add Volunteer need Post
-                  </NavLink>
-                )}
-                <li>
-                  <details>
-                    <summary>Manage my posts</summary>
-                    <ul className="p-2 z-50 shadow">
-                      <li>
-                        <NavLink to={"/myVolunteerNeedPosts"}>
-                          My volunteer need posts
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to={"/myVolunteerRequestPosts"}>
-                          My Volunteer Request Post
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </details>
-                </li>
-              </ul>
-            </div>
-            <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button" className=" m-1">
-                <img
-                  className="w-10 rounded-full my-anchor-element cursor-pointer"
-                  src={user?.photoURL}
-                  alt="userImg"
-                />
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu bg-black rounded-box z-20 -ml-24 lg:w-60 p-2 shadow"
-              >
-                <li>
-                  <p className="text-white text-xl font-medium">
-                    {user?.displayName}
-                  </p>
-                </li>
-                <li>
-                  <button
-                    className="btn bg-purple-700 text-white"
-                    onClick={handleSignOut}
-                  >
-                    Sign Out
-                  </button>
-                </li>
-              </ul>
-            </div>
+      <div className="navbar-end sm:hidden">
+        <div className="dropdown dropdown-hover">
+          <div tabIndex={0} role="button" className=" m-1">
+            {user && (
+              <img
+                className="w-10 rounded-full my-anchor-element cursor-pointer"
+                src={user?.photoURL}
+                alt="userImg"
+              />
+            )}
           </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-black rounded-box z-20 -ml-24 lg:w-60 p-2 shadow"
+          >
+            <li>
+              <p className="text-white text-xl font-medium">
+                {user?.displayName}
+              </p>
+            </li>
+            <li>
+              <button
+                className="btn bg-purple-700 text-white"
+                onClick={handleSignOut}
+              >
+                Sign Out
+              </button>
+            </li>
+          </ul>
+        </div>
+        {user ? (
+          ""
         ) : pathname === "/login" ? (
           <Link className="btn mr-5 bg-purple-700 text-white" to={"/register"}>
             Sign UP
@@ -188,6 +106,97 @@ const Navbar = ({ toggleDarkMode }) => {
             Sign In
           </Link>
         )}
+      </div>
+      <div className=" navbar-end hidden sm:block -mt-5">
+        <div className="flex items-center ml-10 md:ml-20 xl:ml-52 -mt-2 justify-end">
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 lg:m-4 border rounded"
+          >
+            <input
+              type="checkbox"
+              value="synthwave"
+              className="toggle theme-controller"
+            />
+          </button>
+          {user ? (
+            <div className="flex items-center gap-4 relative">
+              <div className="dropdown text-black">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn m-1 text-xl font-medium"
+                >
+                  My Profile
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu text-xl font-medium  space-y-4 py-4 mt-2 rounded-box bg-zinc-200 z-50  w-60 p-2 shadow"
+                >
+                  {user && (
+                    <NavLink to={"/addVolunteer"}>
+                      Add Volunteer need Post
+                    </NavLink>
+                  )}
+                  <li>
+                    <details>
+                      <summary>Manage my posts</summary>
+                      <ul className="p-2 z-50 shadow">
+                        <li>
+                          <NavLink to={"/myVolunteerNeedPosts"}>
+                            My volunteer need posts
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink to={"/myVolunteerRequestPosts"}>
+                            My Volunteer Request Post
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </div>
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button" className=" m-1">
+                  <img
+                    className="w-10 rounded-full my-anchor-element cursor-pointer"
+                    src={user?.photoURL}
+                    alt="userImg"
+                  />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-black rounded-box z-20 -ml-24 lg:w-60 p-2 shadow"
+                >
+                  <li>
+                    <p className="text-white text-xl font-medium">
+                      {user?.displayName}
+                    </p>
+                  </li>
+                  <li>
+                    <button
+                      className="btn bg-purple-700 text-white"
+                      onClick={handleSignOut}
+                    >
+                      Sign Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : pathname === "/login" ? (
+            <Link
+              className="btn mr-5 bg-purple-700 text-white"
+              to={"/register"}
+            >
+              Sign UP
+            </Link>
+          ) : (
+            <Link className="btn mr-5 bg-purple-700 text-white" to={"/login"}>
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </div>
