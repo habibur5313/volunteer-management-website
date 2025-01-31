@@ -11,7 +11,7 @@
 - This is a volunteer management website. The purpose of this website is to manage volunteers. Through this website you can post to get volunteers for your organization or you can be a volunteer of any organization.
 
 # Live URl
-- https://goofy-letter.surge.sh/
+- https://volunteer-network-simple-website-nepn8pub0.vercel.app/
 
 # Github server
 https://github.com/habibur5313/assignment-11-volunteer-management-website-server
