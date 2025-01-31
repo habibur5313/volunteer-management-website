@@ -8,7 +8,7 @@ const AllVolunteerCard = ({ post }) => {
         <figure className="">
           <img className="w-full h-[300px] object-cover" src={post.thumbnailUrl} alt={post?.name} />
         </figure>
-        <div className="card-body flex flex-col flex-grow justify-between p-4">
+        <div className="card-body flex flex-col flex-grow justify-between p-4 text-black">
           <div className="">
             <h2 className="text-3xl font-semibold">{post?.postTitle}</h2>
             <p className="text-xl font-medium">Deadline: {post?.Date.split('T')[0]}</p>

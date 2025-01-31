@@ -50,25 +50,31 @@ export default function App() {
         <SwiperSlide>
           <img
             className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
+            src="https://i.ibb.co.com/0t7JYYV/image-19.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
+            src="https://i.ibb.co.com/KbwMh3q/image-18.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
+            src="https://i.ibb.co.com/xC38dp3/image-17.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
+            src="https://i.ibb.co.com/t3FmWRx/image-20.png"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl "
             src="https://i.ibb.co.com/rpXcXnn/volunteer-network-website-slider-image.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
-            src="https://i.ibb.co.com/jfC4MXL/images.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
-            src="https://i.ibb.co.com/Jj9pxfb/download.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-[300px] md:h-[500px] lg:h-[700px] rounded-xl"
-            src="https://i.ibb.co.com/8rDtKKc/download-1.jpg"
           />
         </SwiperSlide>
       </Swiper>
