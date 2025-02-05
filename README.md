@@ -2,104 +2,106 @@
   <img height="1000" src="https://i.ibb.co.com/j5PDmXW/Screenshot-2025-01-11-105155.png"  />
 </div>
 
-###
+# Volunteer Network  
 
-# Project Name
-- Volunteer Network
+## Introduction  
+**Volunteer Network** is a **volunteer management platform** that allows organizations to **post volunteer opportunities** and enables users to **sign up as volunteers**. The system ensures **secure authentication**, **real-time updates**, and an **interactive dashboard** to manage events and track volunteer participation efficiently.  
 
-# Purpose
-- This is a volunteer management website. The purpose of this website is to manage volunteers. Through this website you can post to get volunteers for your organization or you can be a volunteer of any organization.
+## Table of Contents  
+- [Live Demo](#live-demo)  
+- [Features](#features)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Dependencies](#dependencies)  
+- [Configuration](#configuration)  
+- [Contributors](#contributors)  
+- [License](#license)  
 
-# Live URl
-- https://volunteer-network-simple-website-nepn8pub0.vercel.app/
+## Live Demo  
+🚀 **[Volunteer Network Live Website](https://volunteer-network-simple-website-nepn8pub0.vercel.app/)**  
 
-# Github server
-https://github.com/habibur5313/assignment-11-volunteer-management-website-server
+🔗 **[Server Code Repository](https://github.com/habibur5313/assignment-11-volunteer-management-website-server)**  
 
-# Key Features
-## User Authentication:
-- Login and Registration: Secure user authentication with Firebase.
-- JWT Authentication: Use JWT for secure token-based authentication.
-- Role-Based Access: Different permissions for volunteers, organizers, and administrators.
+## Features  
+✅ **User Authentication**  
+- Secure login and registration with **Firebase Authentication**.  
+- **JWT-based authentication** for secure token management.  
+- **Role-based access** with different permissions for volunteers, organizers, and admins.  
 
-## Volunteer Opportunities:
-- Search: Easily search volunteer opportunities based on title.
-- Details Page: Comprehensive details about each volunteer opportunity including title, description, location, deadline, and organizer information.
+✅ **Volunteer Opportunities**  
+- **Search** and filter volunteer events based on **title**.  
+- **Detailed event pages** with title, description, location, deadline, and organizer information.  
 
-## Event Management:
-- Create and Edit Events: Organizers can create, update, and delete volunteer events.
-- Volunteer Sign-Up: Volunteers can sign up for events directly on the platform.
+✅ **Event Management**  
+- **Create, update, and delete events** for organizations.  
+- Volunteers can **sign up** for events through the platform.  
 
-## Real-Time Updates:
-- Live Dashboard: Real-time updates and notifications with Firebase for both volunteers and organizers.
+✅ **Real-Time Updates**  
+- **Live dashboard** for real-time event updates and notifications using Firebase.  
 
-## Interactive UI:
-- Responsive Design: Tailwind CSS for a responsive and visually appealing user interface.
-- user-Friendly Navigation: Intuitive and easy-to-navigate UI built with React.
+✅ **Interactive UI**  
+- **Tailwind CSS** for a **responsive and visually appealing** interface.  
+- **User-friendly navigation** powered by **React.js**.  
 
-## Data Management:
-- Secure Data Storage: MongoDB for efficient data storage and retrieval.
-- Analytics and Reports: Generate reports on volunteer participation and event success.
+✅ **Data Management**  
+- **MongoDB** for secure and efficient **data storage and retrieval**.  
+- **Analytics and reports** on volunteer participation and event success.  
 
-# Technology Used
-- React
-- javascript
-- tailwind css
-- firebase
-- node.js
-- next.js
-- express.js
-- mongodb
+## Installation  
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/habibur5313/assignment-11-volunteer-management-website-server.git
+cd assignment-11-volunteer-management-website-server
+```
+### 2. Install Dependencies  
+```bash
+npm install
+```
+### 3. Set Up Environment Variables  
+Create a `.env.local` file and add the following credentials:  
+```env
+VITE_apiKey=your_api_key_here
+VITE_authDomain=your_auth_domain_here
+VITE_projectId=your_project_id_here
+VITE_storageBucket=your_storage_bucket_here
+VITE_messagingSenderId=your_messaging_sender_id_here
+VITE_appId=your_app_id_here
+VITE_server=https://assignment-sever-11.vercel.app
+```
 
-# NPM Package Used
-- Tailwind CSS
-- DatePeacker
-- daisyui
-- sweetAlert
-- React icon
-- firebase
+### 4. Start the Development Server  
+```bash
+npm run dev
+```
 
+## Usage  
+1. Open the **[Live Website](https://volunteer-network-simple-website-nepn8pub0.vercel.app/)**.  
+2. **Sign up or log in** using Firebase Authentication.  
+3. Browse **volunteer opportunities** and filter events based on title.  
+4. Click on an event to view **detailed information** and **sign up** as a volunteer.  
+5. **Organizations** can create, edit, and delete events.  
+6. **Admins** can manage users and track volunteer participation.  
 
-# Dependencies
+## Dependencies  
+### **Technology Used**  
+- **Frontend**: React, JavaScript, Tailwind CSS, DaisyUI  
+- **Backend**: Node.js, Express.js, MongoDB  
+- **Authentication**: Firebase, JWT  
+- **Real-Time Updates**: Firebase  
+- **Package Dependencies**:  
+  - `axios`, `firebase`, `react-icons`, `react-tooltip`, `react-datepicker`, `swiper`, `sweetalert2`, `vite`, `eslint`  
 
-To run this project, you will need to have the following dependencies installed:
+## Configuration  
+This project requires Firebase for authentication and MongoDB for data storage. Ensure all **environment variables** are correctly configured in `.env.local` before running the project.  
 
-## Backend
+## Contributors  
+👨‍💻 **Habibur Rahman**  
+- GitHub: [habibur5313](https://github.com/habibur5313)  
 
-- **Node.js** (version 14.x or higher)
-- **Express.js** (version 4.x or higher)
-- **MongoDB** (version 4.x or higher)
-- **Firebase Admin SDK** (version 9.x or higher for server-side integration)
+## License  
+This project is licensed under the **MIT License**.  
 
-## Frontend
+---
 
-- **React** (version 17.x or higher)
-- **Next.js** (version 10.x or higher)
-- **JavaScript (ES6+)**
-- **Axios** (version 0.21.x or higher)
-- **Tailwind CSS** (version 2.x or higher)
-
-## Dev Tools
-
-- **Nodemon** (version 2.x or higher)
-- **Webpack** (version 5.x or higher)
-
-## Testing
-
-- **React Testing Library** (version 11.x or higher)
-
-# Installation
-
-1. Clone the repository: `git clone https://github.com/habibur5313/volunteer-management-website.git`
-2. Navigate to the project directory: `cd volunteer-management-website`
-3. Install backend dependencies: `npm install`
-4. backend server running: `node index.js`
-5. Install frontend dependencies: `cd client && npm install`
-6. Start the development server: `npm run dev`
-
-# Usage
-
-1. Make sure MongoDB is running on your system.
-2. Configure Firebase in your project settings.
-3. Run the project: `npm start`
-
+⭐ **Empower volunteering with Volunteer Network and make an impact today!**  
+---
