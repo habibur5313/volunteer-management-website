@@ -50,8 +50,8 @@
 ## Installation  
 ### 1. Clone the Repository  
 ```bash
-git clone https://github.com/habibur5313/assignment-11-volunteer-management-website-server.git
-cd assignment-11-volunteer-management-website-server
+git clone https://github.com/habibur5313/volunteer-management-website.git
+cd volunteer-management-website
 ```
 ### 2. Install Dependencies  
 ```bash
