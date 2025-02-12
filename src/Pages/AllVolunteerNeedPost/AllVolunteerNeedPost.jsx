@@ -24,6 +24,11 @@ const AllVolunteerNeedPost = () => {
   const handleSort = (e) => {
     e.preventDefault()
    const sort = e.target.value
+   axios.get(`http://localhost:5000/volunteers/${sort}`)
+   .then(res => {
+    setPosts(res.data);
+    
+   })
 
   };
 
@@ -47,8 +52,8 @@ const AllVolunteerNeedPost = () => {
         />
         <select onChange={handleSort} className="select select-bordered h-14 max-w-md lg:max-w-xs mx-auto lg:mx-0 w-full">
         <option>sorting</option>
-          <option>sort by date</option>
-          <option>sort by volunteer need</option>
+          <option>sort by date (Descending)</option>
+          <option>sort by volunteer need (Descending)</option>
         </select>
       </div>
       <div className="flex justify-end mr-10">
