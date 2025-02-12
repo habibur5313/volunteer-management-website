@@ -125,7 +125,7 @@ const Navbar = ({ toggleDarkMode }) => {
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn m-1 text-xl font-medium"
+                  className="border px-1 py-2 text-white rounded-xl text-xl font-medium"
                 >
                   My Profile
                 </div>
@@ -176,7 +176,7 @@ const Navbar = ({ toggleDarkMode }) => {
                   </li>
                   <li>
                     <button
-                      className="btn bg-purple-700 text-white"
+                      className="btn btn-accent text-white"
                       onClick={handleSignOut}
                     >
                       Sign Out
@@ -187,13 +187,13 @@ const Navbar = ({ toggleDarkMode }) => {
             </div>
           ) : pathname === "/login" ? (
             <Link
-              className="btn mr-5 bg-purple-700 text-white"
+              className="border px-2 py-3 rounded-xl text-purple-600 mr-5 text-xl font-medium"
               to={"/register"}
             >
               Sign UP
             </Link>
           ) : (
-            <Link className="btn mr-5 bg-purple-700 text-white" to={"/login"}>
+            <Link className="border px-2 py-3 rounded-xl text-purple-600 mr-5 text-xl font-medium" to={"/login"}>
               Sign In
             </Link>
           )}
