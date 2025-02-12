@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "axios": "^1.7.9",
+    "emailjs": "^4.0.3",
     "firebase": "^11.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
@@ -22,7 +24,8 @@
     "react-simple-typewriter": "^5.0.1",
     "react-tooltip": "^5.28.0",
     "sort-by": "^1.2.0",
-    "sweetalert2": "^11.15.3",
+    "swal": "^0.1.0",
+    "sweetalert2": "^11.16.0",
     "swiper": "^11.1.15",
     "tooltip": "^1.6.1",
     "typewriter-effect": "^2.21.0"
