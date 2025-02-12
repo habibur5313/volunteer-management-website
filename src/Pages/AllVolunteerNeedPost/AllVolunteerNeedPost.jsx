@@ -24,7 +24,7 @@ const AllVolunteerNeedPost = () => {
   const handleSort = (e) => {
     e.preventDefault()
    const sort = e.target.value
-   axios.get(`http://localhost:5000/volunteers/${sort}`)
+   axios.get(`${import.meta.env.VITE_server}/volunteers/${sort}`)
    .then(res => {
     setPosts(res.data);
     
