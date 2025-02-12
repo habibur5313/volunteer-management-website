@@ -4,10 +4,10 @@ const Location = () => {
   return (
     <>
       <h1 className="text-3xl mt-20 font-bold text-center text-purple-600">
-        Grand Sultan Tea Resort & Golf
+      Sylhet Jubo Academy (SJA)
       </h1>
       <p className="text-xl font-semibold text-center max-w-xl mx-auto mt-4">
-        Sreemangal, Moulvibazar, Sylhet, Bangladesh
+         Sylhet, Bangladesh
       </p>
       <iframe
         className="w-full h-[300px] sm:h-[450px] md:h-[500px] lg:h-[600px] mt-10 rounded-xl"
